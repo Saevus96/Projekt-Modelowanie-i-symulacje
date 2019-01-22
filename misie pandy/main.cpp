@@ -115,9 +115,9 @@ double etap2() {
 	o rozk³adzie normalnym
 
 	Kana³ 1: Ma³a liczba pand. Je¿eli poluj¹cych by³o 20 lub mniej ni¿ 20 na rok to liczba pand które zginê³y by³a ma³a
-	Liczba pand generowana Boxem-Mullerem -> mi 15, sigma 0.5;
+	Liczba pand generowana Boxem-Mullerem -> mi 15, sigma 5;
 	Kana³ 2: Du¿a liczba pand. Je¿eli poluj¹cych by³o wiêcej ni¿ 20 na rok to liczba pand które zginê³y by³a du¿a.
-	Liczba pand generowana Boxem-Mullerem -> mi 25, sigma 0.5;
+	Liczba pand generowana Boxem-Mullerem -> mi 25, sigma 5;
 */
 
 double etap3() {
@@ -128,11 +128,11 @@ double etap3() {
 	double numberOfDeaths = 0.0;
 	//Kana³ 1
 	if (numberOfPoachers <= 20) {
-		numberOfDeaths = boxMullerMethod(15, 0.5);
+		numberOfDeaths = boxMullerMethod(15.0, 5);
 	}
 	//Kana³ 2
 	else if(numberOfPoachers > 20){
-		numberOfDeaths = boxMullerMethod(25, 0.5);
+		numberOfDeaths = boxMullerMethod(25.0, 5);
 	}
 
 	return numberOfDeaths;
@@ -147,9 +147,9 @@ double etap3() {
 	Liczba pand które zginê³y losowane s¹ za pomoc¹ generatora o rozk³adzie normalnym.
 
 	Kana³ 1: Ma³a iloœæ pand. Je¿eli iloœæ km^2 wyciêtych lasów bambusowych mniejsza rowna 5tysiêcy km^2.
-			 Ma³a iloœc pand losowana Boxem Mullera gdzie mi 15, a sigma 1
+			 Ma³a iloœc pand losowana Boxem Mullera gdzie mi 15, a sigma 5
 	Kana³ 2: Du¿a iloœæ pand. Je¿eli iloœæ km^2 wyciêtych lasów bambusowych wiêksza od 5tysiêcy km^2.
-			 Du¿a iloœc pand losowana Boxem Mullera gdzie mi 25, a sigma 1
+			 Du¿a iloœc pand losowana Boxem Mullera gdzie mi 25, a sigma 5
 
 
 */
@@ -158,11 +158,11 @@ double etap4() {
 	double numberOfDeaths = 0.0;
 	//Kana³ 1
 	if (numberOfKilometers <= 5.0) {
-		numberOfDeaths = boxMullerMethod(15, 1.0);
+		numberOfDeaths = boxMullerMethod(15, 5);
 	}
 	//Kana³ 2
 	else if (numberOfKilometers > 5.0) {
-		numberOfDeaths = boxMullerMethod(25.0, 1.0);
+		numberOfDeaths = boxMullerMethod(25.0, 5);
 	}
 
 	return numberOfDeaths;
@@ -177,24 +177,24 @@ double etap4() {
 	Liczba pand które zginê³y losowane s¹ za pomoc¹ generatora o rozk³adzie normalnym.
 
 	Kana³ 1: Ma³a iloœæ pand. Je¿eli iloœæ kilogramów bambusa który obumar³ mniejsza rowna 2,5 tysi¹ca kilogramów.
-			 Ma³a iloœc pand losowana Boxem Mullera gdzie mi 10, a sigma 0.5
+			 Ma³a iloœc pand losowana Boxem Mullera gdzie mi 10, a sigma 5
 	Kana³ 2: Du¿a iloœæ pand. Je¿eli iloœæ km^2 wyciêtych lasów bambusowych wiêksza od 2,5tysiêcy km^2.
-			 Du¿a iloœc pand losowana Boxem Mullera gdzie mi 20, a sigma 0.5
+			 Du¿a iloœc pand losowana Boxem Mullera gdzie mi 20, a sigma 5
 
 
 */
 
 double etap5() {
 	
-	int numberOfKilograms = getRandomRealValue(0.0, 5.0);
+	int numberOfKilograms = getRandomRealValue(0.0, 5);
 	double numberOfDeaths = 0.0;
 	//Kana³ 1
 	if (numberOfKilograms <= 2.5) {
-			numberOfDeaths = boxMullerMethod(10, 0.5);
+			numberOfDeaths = boxMullerMethod(10, 5);
 		}
 	//Kana³ 2
 	else if (numberOfKilograms > 2.5) {
-		numberOfDeaths = boxMullerMethod(20.0, 0.5);
+		numberOfDeaths = boxMullerMethod(20.0, 5);
 	}
 
 	return numberOfDeaths;
